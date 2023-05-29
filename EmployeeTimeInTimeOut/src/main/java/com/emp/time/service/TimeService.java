@@ -1,5 +1,8 @@
 package com.emp.time.service;
 
+import java.sql.Date;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -20,6 +23,11 @@ public class TimeService
 	public void updateInTimeService(TimeInfo timeinfo,int empid)
 	{
 		timeRepository.updateInTimeRepo(timeinfo,empid);
+	}
+
+	public List<TimeInfo> getDateListService(Date date) 
+	{
+		return timeRepository.getDateListRepo(date);
 	}
 	
 }

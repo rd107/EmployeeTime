@@ -1,5 +1,6 @@
 package com.emp.time.controller;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -74,5 +75,13 @@ public class EmployeeController
 	public String getChooseDate()
 	{
 		return "choose-date";
+	}
+	
+	@RequestMapping("any-date")
+	public String anydate(@RequestParam Date date,Model model)
+	{
+		List<TimeInfo> dateList = timeService.getDateListService(date);
+		model.addAttribute("tlist", dateList);
+		return "any-date-chooser";
 	}
 }

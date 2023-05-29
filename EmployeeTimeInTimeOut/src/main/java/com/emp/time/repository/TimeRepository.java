@@ -70,4 +70,11 @@ public class TimeRepository
 			transaction.commit();
 	}
 
+	public List<TimeInfo> getDateListRepo(Date date) 
+	{
+		Query<TimeInfo> query = session.createQuery("from TimeInfo where date = :arg1");
+		query.setParameter("arg1", date);
+		List<TimeInfo> dateList = query.list();
+		return dateList;
+	}
 }

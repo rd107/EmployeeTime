@@ -31,7 +31,7 @@
     </tr>
     <tr>
      <td class='pd'>
-      <form action='any-date.jsp' method="post">
+      <form action='any-date' method="post">
        <table class='cdta'>
         <tr>
          <td>Any date</td>
